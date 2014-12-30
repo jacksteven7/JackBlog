@@ -11,3 +11,27 @@
  *= require_self
  *= require_tree .
  */
+body {
+    background-image:  url(/image/background.png);
+    background-size:   cover;                      /* <------ */
+    background-repeat: no-repeat;
+}
+
+ .inherit{
+  font : inherit;
+  font-size: 20px;
+}
+th, td { padding: 5px; }
+
+.table_login {
+
+border-collapse: separate;
+border-spacing: 22px; 
+
+}
+
+
+.width_login{
+	width: 20%
+}
+    

@@ -1,15 +1,16 @@
 <%= form_tag user_sessions_path, method: :post do %>
-  <p id="notice"><%= notice %></p>
-  <div class="field">
-    <%= label_tag :username %><br />
-    <%= text_field_tag :username %>
-  </div>
-  <div class="field">
-    <%= label_tag :password %><br />
-    <%= text_field_tag :password %>
-  </div>
-  <div class="actions">
-    <%= submit_tag %>
+<p id="notice"><%= notice %></p>
+  <div align="center" >
+    <div class="width_login">
+      <br><br><br><br>
+      <div class="input-group">
+         <span class="input-group-addon">@</span>
+         <%= text_field_tag :username,"", :class => "form-control width_login" , :placeholder => "Username" %>
+       </div><br>
+       <%= text_field_tag :password , "", :class => "form-control width_login" , :placeholder => "Password" %>
+       <br><br>
+       <%= submit_tag "Log in", :class => "btn btn-default"%>
+     </div>  
   </div>
 <% end %>
  

@@ -6,20 +6,23 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-<nav class='navbar' >
+<body background="/image/background.png">
+<nav class='navbar' style="background-color: black;">
 	<div class='navbar-inner' >
 		<ul class= 'nav navbar-nav'>
-			<li> <%= link_to 'Inicio', root_path %>	</li>
-			<li> <%= link_to 'Posts', posts_path %>	</li>
+			<li> <%= image_tag("/image/corner.png") %></li>
+			<li><%= link_to image_tag("/image/shopicon.png", :width => "40", :height => "40" ), 
+										{:action => 'index', :controller => 'posts'} %>
+			</li>
+			<li> <%= image_tag("/image/title.png") %></li>
 			<% if current_user %>
 				<li><%= link_to "New Article", new_post_path %></li>
-				<li><%= link_to "Log Out #{current_user.username}", logout_path %></li>
+				<li><%= link_to "Log Out  #{current_user.username}", logout_path %></li>
 				<li><%= link_to "Edit User", edit_user_path(current_user) %></li>
 			<% else %>
-				<li><%= link_to "Log In", login_path %></li>
-
+				<li><%= link_to image_tag("/image/login.jpg", :width => "40", :height => "40"), login_path %></li>
 			<% end %>	
+
 		</ul>
 	</div>
 </nav>
