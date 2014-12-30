@@ -7,24 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav class='navbar' >
-	<div class='navbar-inner' >
-		<ul class= 'nav navbar-nav'>
-			<li> <%= link_to 'Inicio', root_path %>	</li>
-			<li> <%= link_to 'Posts', posts_path %>	</li>
-			<% if current_user %>
-				<li><%= link_to "New Article", new_post_path %></li>
-				<li><%= link_to "Log Out #{current_user.username}", logout_path %></li>
-				<li><%= link_to "Edit User", edit_user_path(current_user) %></li>
-			<% else %>
-				<li><%= link_to "Log In", login_path %></li>
+<div align="center" style="background-color: black">
+	<nav class='navbar' style="display: inline-block;margin: 0;">
+		<div class='navbar-inner' >
+			<ul class= 'nav navbar-nav'>
+				<li><%= link_to image_tag("/image/shopicon.png", :width => "40", :height => "40" ), 
+											{:action => 'index', :controller => 'posts'} %>
+				</li>
+				<li> <%= image_tag("/image/title.png") %></li>
+				<% if current_user %>
+					<li><%= link_to "Log Out  #{current_user.username}", logout_path %></li>
+				<% else %>
+					<li><%= link_to image_tag("/image/login.jpg", :width => "40", :height => "40"), login_path %></li>
+				<% end %>	
 
-			<% end %>	
-		</ul>
-	</div>
-</nav>
+			</ul>
+		</div>
+	</nav>
 
-
+</div>
 <%= yield %>
 
 </body>
