@@ -6,50 +6,19 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-<<<<<<< HEAD
 <body>
 <div align="center" style="background-color: black">
-	<nav class='navbar' style="display: inline-block;margin: 0;">
-		<div class='navbar-inner' >
-			<ul class= 'nav navbar-nav'>
-				<li><%= link_to image_tag("/image/shopicon.png", :width => "40", :height => "40" ), 
-											{:action => 'index', :controller => 'posts'} %>
-				</li>
-				<li> <%= image_tag("/image/title.png") %></li>
+				<%= link_to image_tag("/image/shopicon.png", :width => "40", :height => "40" ), {:action => 'index', :controller => 'posts'} %>
+				<%= label_tag "Sexshop","Sexshop", :class => "inherit", :style => "width: 500px;color : white" %>
 				<% if current_user %>
-					<li><%= link_to "Log Out  #{current_user.username}", logout_path %></li>
+					<%= link_to "Log Out  #{current_user.username}", logout_path %>
 				<% else %>
-					<li><%= link_to image_tag("/image/login.jpg", :width => "40", :height => "40"), login_path %></li>
-				<% end %>	
-=======
-<body background="/image/background.png">
-<nav class='navbar' style="background-color: black;">
-	<div class='navbar-inner' >
-		<ul class= 'nav navbar-nav'>
-			<li> <%= image_tag("/image/corner.png") %></li>
-			<li><%= link_to image_tag("/image/shopicon.png", :width => "40", :height => "40" ), 
-										{:action => 'index', :controller => 'posts'} %>
-			</li>
-			<li> <%= image_tag("/image/title.png") %></li>
-			<% if current_user %>
-				<li><%= link_to "New Article", new_post_path %></li>
-				<li><%= link_to "Log Out  #{current_user.username}", logout_path %></li>
-				<li><%= link_to "Edit User", edit_user_path(current_user) %></li>
-			<% else %>
-				<li><%= link_to image_tag("/image/login.jpg", :width => "40", :height => "40"), login_path %></li>
-			<% end %>	
-
-		</ul>
-	</div>
-</nav>
->>>>>>> a6a2a402975d284da1d7c17d08249a2b3a07f5d4
-
-			</ul>
-		</div>
-	</nav>
-
+					<%= link_to image_tag("/image/login.jpg", :width => "40", :height => "40"), login_path %>
+				<% end %>
 </div>
+<%= link_to "Add Product", new_post_path %>
+<div align="center">
 <%= yield %>
-
+</div>
 </body>
 </html>

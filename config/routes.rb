@@ -1,4 +1,7 @@
 JackBlog::Application.routes.draw do
+  resources :products
+
+
   resources :users
   resources :posts
   resources :user_sessions
